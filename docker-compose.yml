@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: agenttrace-db
+    environment:
+      POSTGRES_USER: agenttrace
+      POSTGRES_PASSWORD: agenttrace123
+      POSTGRES_DB: agenttrace
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
